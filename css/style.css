@@ -55,6 +55,7 @@ header {
     cursor: pointer;
     transition: transform 0.2s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
 }
 
 .shortcut-card:hover {
@@ -105,4 +106,42 @@ button {
 
 .cancel-btn {
     background-color: #f44336;
+}
+
+/* 新增：設定捷徑卡片內部操作圖示的樣式 */
+.shortcut-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.shortcut-card:hover .shortcut-actions {
+    opacity: 1;
+}
+
+.shortcut-actions .material-icons {
+    font-size: 20px;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.shortcut-actions .edit-icon:hover {
+    background-color: rgba(33, 150, 243, 0.3);
+}
+
+.shortcut-actions .delete-icon:hover {
+    background-color: rgba(244, 67, 54, 0.3);
+}
+
+/* 防止點擊事件衝突 */
+.shortcut-actions .material-icons {
+    z-index: 2;
+    position: relative;
 } 
