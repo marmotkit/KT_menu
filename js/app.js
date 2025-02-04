@@ -14,7 +14,10 @@ class ShortcutManager {
     async registerServiceWorker() {
         if ('serviceWorker' in navigator) {
             try {
-                await navigator.serviceWorker.register('/KT_menu/sw.js');
+                const registration = await navigator.serviceWorker.register('/KT_menu/sw.js', {
+                    scope: '/KT_menu/'
+                });
+                console.log('Service Worker 註冊成功:', registration);
             } catch (error) {
                 console.error('Service Worker 註冊失敗:', error);
             }

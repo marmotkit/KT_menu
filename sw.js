@@ -4,7 +4,8 @@ const ASSETS = [
     '/KT_menu/index.html',
     '/KT_menu/css/style.css',
     '/KT_menu/js/app.js',
-    '/KT_menu/manifest.json'
+    '/KT_menu/manifest.json',
+    'https://fonts.googleapis.com/icon?family=Material+Icons'
 ];
 
 self.addEventListener('install', (event) => {
